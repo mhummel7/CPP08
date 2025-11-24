@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 09:13:21 by mhummel           #+#    #+#             */
-/*   Updated: 2025/08/12 08:56:53 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/24 08:50:35 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 int main() {
 	// Basic test
+	std::cout << "---- Basic Test ----" << std::endl;
 	Span sp(5);
 	try {
 		sp.addNumber(6);
@@ -33,6 +34,7 @@ int main() {
 	}
 
 	// Test with addRange
+	std::cout << "---- Range Test ----" << std::endl;
 	Span sp2(10000);
 	std::vector<int> vec;
 	std::srand(std::time(NULL));
@@ -49,12 +51,49 @@ int main() {
 	}
 
 	// Edge cases
+	std::cout << "---- Edge Case Test ----" << std::endl;
 	Span sp3(1);
 	try {
 		sp3.addNumber(42);
 		sp3.shortestSpan();		// Should throw
 	} catch (const std::exception& e) {
 		std::cout << "Edge error: " << e.what() << std::endl;
+	}
+
+	// Test duplicates and zero span
+	std::cout << "---- Duplicates and Zero Span Test ----" << std::endl;
+	Span sp4(3);
+	try {
+		sp4.addNumber(5);
+		sp4.addNumber(5);
+		sp4.addNumber(10);
+		std::cout << "Shortest span (dupes): " << sp4.shortestSpan() << std::endl;  // 0
+		std::cout << "Longest span (dupes): " << sp4.longestSpan() << std::endl;   // 5
+	} catch (const std::exception& e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	// Test Span(0)
+	std::cout << "---- Zero Size Test ----" << std::endl;
+	Span sp5(0);
+	try {
+		sp5.addNumber(1);  // Should throw immediately
+	} catch (const std::exception& e) {
+		std::cout << "Zero size error: " << e.what() << std::endl;
+	}
+
+	// Test negatives
+	std::cout << "---- Negatives Test ----" << std::endl;
+	Span sp6(3);
+	try {
+		sp6.addNumber(-5);
+		sp6.addNumber(0);
+		sp6.addNumber(5);
+		std::cout << "Shortest span (neg): " << sp6.shortestSpan() << std::endl;  // 5
+		std::cout << "Longest span (neg): " << sp6.longestSpan() << std::endl;   // 10
+		sp6.addNumber(-10);  // Should throw
+	} catch (const std::exception& e) {
+		std::cout << "Error: " << e.what() << std::endl;
 	}
 
 	return 0;

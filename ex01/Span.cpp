@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 09:01:34 by mhummel           #+#    #+#             */
-/*   Updated: 2025/08/14 09:01:42 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/24 08:49:19 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int Span::shortestSpan() const {
 	std::sort(sorted.begin(), sorted.end());
 	int minDiff = std::numeric_limits<int>::max();
 	for (size_t i = 1; i < sorted.size(); ++i) {
-		int diff = std::abs(sorted[i] - sorted[i - 1]);
+		int diff = sorted[i] - sorted[i - 1];
 		if (diff < minDiff) {
 			minDiff = diff;
 		}
@@ -57,5 +57,5 @@ int Span::longestSpan() const {
 	}
 	std::vector<int> sorted = _data;
 	std::sort(sorted.begin(), sorted.end());
-	return std::abs(sorted.back() - sorted.front());
+	return sorted.back() - sorted.front();
 }
