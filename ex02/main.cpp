@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 09:14:53 by mhummel           #+#    #+#             */
-/*   Updated: 2025/08/12 08:56:51 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/24 08:53:49 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,25 @@ int main() {
 		++it;
 	}
 	std::stack<int> s(mstack);
+
+	// Test reverse iterators
+	std::cout << "\nReverse iteration:\n";
+	MutantStack<int>::reverse_iterator rit = mstack.rbegin();
+	MutantStack<int>::reverse_iterator rite = mstack.rend();
+	while (rit != rite) {
+		std::cout << *rit << std::endl;
+		++rit;
+	}
+
+	// Test copy and const
+	std::cout << "\nCopy test:\n";
+	MutantStack<int> copy(mstack);
+	copy.pop();  // Modify copy
+	std::cout << "Original size: " << mstack.size() << ", Copy size: " << copy.size() << std::endl;
+
+	const MutantStack<int> const_stack(mstack);
+	MutantStack<int>::const_iterator cit = const_stack.begin();
+	std::cout << "Const first: " << *cit << std::endl;
 
 	// Same test with std::list (should produce identical output)
 	std::cout << "\nTesting with std::list:\n";
