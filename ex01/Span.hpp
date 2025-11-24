@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 09:12:04 by mhummel           #+#    #+#             */
-/*   Updated: 2025/08/14 09:06:08 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/24 15:47:49 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <iterator>		// For std::distance
 #include <limits>		// For numeric_limits
 #include <cstdlib>		// For std::abs
+#include <numeric>      // For std::adjacent_difference
 
 class Span {
 private:
