@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:56:32 by mhummel           #+#    #+#             */
-/*   Updated: 2025/11/24 08:23:49 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/24 15:31:23 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 int main() {
 	// Test with std::vector
+	// Vector explanation: A dynamic array that allows random access and can change size.
+	// Like a Table where you can access any item directly by its index.
 	std::vector<int> vec = {1, 2, 3, 4, 5};
 	try {
 		auto it = easyfind(vec, 3);
@@ -28,6 +30,8 @@ int main() {
 	}
 
 	// Test with std::list
+	// List explanation: A doubly linked list that allows efficient insertions and deletions.
+	// Like a Chain of items where each item points to the next and previous ones.
 	std::list<int> lst = {10, 20, 30, 40};
 	try {
 		auto it = easyfind(lst, 20);
@@ -38,6 +42,8 @@ int main() {
 	}
 
 	// Test with std::deque
+	// Deque explanation: A double-ended queue that allows fast insertions and deletions at both ends.
+	// Like a Line of items where you can add or remove items from both the front and back.
 	std::deque<int> deq = {100, 200, 300};
 	try {
 		auto it = easyfind(deq, 200);

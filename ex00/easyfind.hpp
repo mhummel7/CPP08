@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:56:04 by mhummel           #+#    #+#             */
-/*   Updated: 2025/11/24 08:23:00 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/24 15:36:54 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <algorithm>  // For std::find
 #include <stdexcept>  // For std::runtime_error
 
-template <typename T>
+template <typename T> // T should be a container type
 typename T::const_iterator easyfind(const T& container, int value) {
 	typename T::const_iterator it = std::find(container.begin(), container.end(), value);
 	if (it == container.end()) {
