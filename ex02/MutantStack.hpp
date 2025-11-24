@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 09:14:35 by mhummel           #+#    #+#             */
-/*   Updated: 2025/08/14 09:04:28 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/24 15:52:16 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	~MutantStack() {}
 
 	// Member functions
-	typedef typename std::stack<T>::container_type::iterator iterator;
+	typedef typename std::stack<T>::container_type::iterator iterator; // Explanation: acces to underlying container's iterator type
 	iterator begin() { return this->c.begin(); }
 	iterator end() { return this->c.end(); }
 
