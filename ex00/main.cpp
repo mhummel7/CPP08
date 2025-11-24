@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:56:32 by mhummel           #+#    #+#             */
-/*   Updated: 2025/08/06 12:42:25 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/24 08:23:49 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,14 @@ int main() {
 		easyfind(deq, 400);  // Should throw
 	} catch (const std::exception& e) {
 		std::cout << "Deque error: " << e.what() << std::endl;
+	}
+
+	// Extra Test: Empty container
+	std::vector<int> empty_vec;
+	try {
+		easyfind(empty_vec, 1);  // Should throw
+	} catch (const std::exception& e) {
+		std::cout << "Empty vector error: " << e.what() << std::endl;
 	}
 
 	return 0;
