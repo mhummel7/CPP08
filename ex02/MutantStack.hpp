@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 09:14:35 by mhummel           #+#    #+#             */
-/*   Updated: 2025/11/24 15:52:16 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/25 08:27:17 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 
 	// Member functions
 	typedef typename std::stack<T>::container_type::iterator iterator; // Explanation: acces to underlying container's iterator type
-	iterator begin() { return this->c.begin(); }
+	iterator begin() { return this->c.begin(); } //Explanation: 'c' is the protected member of std::stack that holds the underlying container
 	iterator end() { return this->c.end(); }
 
 	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
