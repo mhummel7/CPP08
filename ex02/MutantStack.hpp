@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 09:14:35 by mhummel           #+#    #+#             */
-/*   Updated: 2025/11/25 08:27:17 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/25 11:23:42 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ public:
 	~MutantStack() {}
 
 	// Member functions
-	typedef typename std::stack<T>::container_type::iterator iterator; // Explanation: acces to underlying container's iterator type
-	iterator begin() { return this->c.begin(); } //Explanation: 'c' is the protected member of std::stack that holds the underlying container
+	// Stack has underlzing container which is default deque. Stack has protected c which is why we can use pop etc, but im accessing here directly to get the iterators.
+	typedef typename std::stack<T>::container_type::iterator iterator; // acces to underlying container's iterator type.
+	iterator begin() { return this->c.begin(); } // 'c' is the protected member of std::stack that holds the underlying container
 	iterator end() { return this->c.end(); }
 
 	typedef typename std::stack<T>::container_type::const_iterator const_iterator;
