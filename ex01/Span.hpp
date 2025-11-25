@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 09:12:04 by mhummel           #+#    #+#             */
-/*   Updated: 2025/11/24 15:47:49 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/25 11:06:12 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@
 #include <stdexcept>	// For std::runtime_error
 #include <iterator>		// For std::distance
 #include <limits>		// For numeric_limits
-#include <cstdlib>		// For std::abs
-#include <numeric>      // For std::adjacent_difference
+#include <climits>      // For UINT_MAX
 
 class Span {
 private:
@@ -50,18 +49,18 @@ public:
 		_data.insert(_data.end(), begin, end);
 	}
 
-	int shortestSpan() const;
-	int longestSpan() const;
+	unsigned int shortestSpan() const;
+	unsigned int longestSpan() const;
 
 	// Exceptions
-	class FullException : public std::runtime_error {
+	class FullException : public std::logic_error {
 	public:
-		FullException() : std::runtime_error("Span is full") {}
+		FullException() : std::logic_error("Span is full") {}
 	};
 
-	class NoSpanException : public std::runtime_error {
+	class NoSpanException : public std::logic_error {
 	public:
-		NoSpanException() : std::runtime_error("No span can be found (not enough elements)") {}
+		NoSpanException() : std::logic_error("No span can be found (not enough elements)") {}
 	};
 };
 
