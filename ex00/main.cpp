@@ -6,7 +6,7 @@
 /*   By: mhummel <mhummel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:56:32 by mhummel           #+#    #+#             */
-/*   Updated: 2025/11/24 15:31:23 by mhummel          ###   ########.fr       */
+/*   Updated: 2025/11/25 10:21:12 by mhummel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main() {
 		auto it = easyfind(vec, 3);
 		std::cout << "Found in vector: " << *it << std::endl;
 		easyfind(vec, 10);  // Should throw
-	} catch (const std::exception& e) {
+	} catch (const std::exception& e) { // out_of_range inherits from exception
 		std::cout << "Vector error: " << e.what() << std::endl;
 	}
 
